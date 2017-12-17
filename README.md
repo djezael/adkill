@@ -1,7 +1,7 @@
 # Adkill - Kill Ads without browser extension -
-- Version :2.2
+- Version :2.4
 - Author : Penthium2
-- Release date : 07-01-2016
+- Release date : 2017-12-17
 - licence : GNU GPL V.3
 
 Inspired by original [hakerdefo] script.
@@ -22,6 +22,8 @@ Just run the script or add some options :
 - --psh : activate blacklist of phishing sites listed in the hpHosts database.
 - --wrz : activate blacklist of warez/piracy sites listed in the hpHosts database.
 - --all : activate blacklist of all sites listed in the hpHosts database.
+- --restore : restore the default /etc/hosts."
+- --apply : apply the Adkill filter in /etc/hosts."
 
 
 Adkill creates ~/.adkill directory then
@@ -33,6 +35,8 @@ Each time you run **Adkill**, its analyses your hosts file and just add new ad s
 
 - If you run **Adkill** with root, the merging of original hosts file and new advertisement references is automatic.
 - If you run **Adkill** with normal user, **Adkill** prompts you how to merge manualy the advertisement references in your hosts file.
+
+# create a config file
 
 # Automation :
 Copy **Adkill** in your /etc/cron.weekly directory.
