@@ -1,9 +1,10 @@
 #!/bin/bash
 
 ## adkill
-## version 2.4
+## version 2.5
+## release 20017/12/18
 ## by penthium for Viperr
-## Fork
+## Fork by DD
 ## inspired by this script http://vsido.org/index.php?topic=757.0
 ############################################################ 
 ############################################################
@@ -47,20 +48,21 @@ f_download() {
 f_show_help() {
 	echo "run adkill.sh <option>"
 	echo "run adkill.sh <option>"
-	echo "--ats : activate blacklist of ad/tracking servers listed in the hpHosts database."
-	echo "--emd : activate blacklist of malware sites listed in the hpHosts database."
-	echo "--exp : activate blacklist of exploit sites listed in the hpHosts database."
-	echo "--fsa : activate blacklist of fraud sites listed in the hpHosts database."
-	echo "--grm : activate blacklist of sites involved in spam (that do not otherwise meet any other classification criteria) listed in the hpHosts database."
-	echo "--hfs : activate blacklist of sites spamming the hpHosts forums (and not meeting any other classification criteria) listed in the hpHosts database."
-	echo "--hjk : activate blacklist of hijack sites listed in the hpHosts database."
-	echo "--mmt : activate blacklist of sites involved in misleading marketing (e.g. fake Flash update adverts) listed in the hpHosts database."
-	echo "--pha : activate blacklist of illegal pharmacy sites listed in the hpHosts database."
-	echo "--psh : activate blacklist of phishing sites listed in the hpHosts database."
-	echo "--wrz : activate blacklist of warez/piracy sites listed in the hpHosts database."
-	echo "--all : activate blacklist of all sites listed in the hpHosts database."
-	echo "--restore : restore the default /etc/hosts."
-	echo "--apply : apply the Adkill filter in /etc/hosts."
+	echo "--ats     : activate blacklist of ad/tracking servers listed in the hpHosts database."
+	echo "--emd     : activate blacklist of malware sites listed in the hpHosts database."
+	echo "--exp     : activate blacklist of exploit sites listed in the hpHosts database."
+	echo "--fsa     : activate blacklist of fraud sites listed in the hpHosts database."
+	echo "--grm     : activate blacklist of sites involved in spam (that do not otherwise meet any other classification criteria) listed in the hpHosts database."
+	echo "--hfs     : activate blacklist of sites spamming the hpHosts forums (and not meeting any other classification criteria) listed in the hpHosts database."
+	echo "--hjk     : activate blacklist of hijack sites listed in the hpHosts database."
+	echo "--mmt     : activate blacklist of sites involved in misleading marketing (e.g. fake Flash update adverts) listed in the hpHosts database."
+	echo "--pha     : activate blacklist of illegal pharmacy sites listed in the hpHosts database."
+	echo "--psh     : activate blacklist of phishing sites listed in the hpHosts database."
+	echo "--wrz     : activate blacklist of warez/piracy sites listed in the hpHosts database."
+	echo "--all     : activate blacklist of all sites listed in the hpHosts database."
+	echo "--restore : restore the default /etc/hosts (must be 'root')."
+	echo "--apply   : apply the Adkill filter in /etc/hosts (must be 'root')."
+	echo "--help    : show this help."
 	exit 1
 
 }
@@ -81,37 +83,38 @@ f_load_config_file () {
 		fi
 					
 		if [[ -n "$section" && -n "$enabled" && -n "$url" && -n "$msg" ]] ; then
-			if [[ "$ats" = 1 ]] ; then
+			if [[ "$section" = "ats" && "$ats" = 1 ]] ; then
 				"$enabled"=1
 			fi
-			if [[ "$emd" = 1 ]] ; then
+
+			if [[ "$section" = "emd" && "$emd" = 1 ]] ; then
 				"$enabled"=1
 			fi
-			if [[ "$exp" = 1 ]] ; then
+			if [[ "$section" = "exp" && "$exp" = 1 ]] ; then
 				"$enabled"=1
 			fi
-			if [[ "$fsa" = 1 ]] ; then
+			if [[ "$section" = "fsa" && "$fsa" = 1 ]] ; then
 				"$enabled"=1
 			fi
-			if [[ "$grm" = 1 ]] ; then
+			if [[ "$section" = "grm" && "$grm" = 1 ]] ; then
 				"$enabled"=1
 			fi
-			if [[ "$hfs" = 1 ]] ; then
+			if [[ "$section" = "hfs" && "$hfs" = 1 ]] ; then
 				"$enabled"=1
 			fi
-			if [[ "$hjk" = 1 ]] ; then
+			if [[ "$section" = "hjk" && "$hjk" = 1 ]] ; then
 				"$enabled"=1
 			fi
-			if [[ "$mnt" = 1 ]] ; then
+			if [[ "$section" = "mnt" && "$mnt" = 1 ]] ; then
 				"$enabled"=1
 			fi
-			if [[ "$pha" = 1 ]] ; then
+			if [[ "$section" = "pha" && "$pha" = 1 ]] ; then
 				"$enabled"=1
 			fi
-			if [[ "$psh" = 1 ]] ; then
+			if [[ "$section" = "psh" && "$psh" = 1 ]] ; then
 				"$enabled"=1
 			fi
-			if [[ "$wrz" = 1 ]] ; then
+			if [[ "$section" = "wrz" && "$wrz" = 1 ]] ; then
 				"$enabled"=1
 			fi
 			if [[ "$all" = 1 ]] ; then
