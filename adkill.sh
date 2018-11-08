@@ -82,43 +82,43 @@ f_load_config_file () {
 					
 		if [[ -n "$section" && -n "$enabled" && -n "$url" && -n "$msg" ]] ; then
 			if [[ "$section" = "ats" && "$ats" = 1 ]] ; then
-				"$enabled"=1
+				enabled=1
 			fi
 			if [[ "$section" = "emd" && "$emd" = 1 ]] ; then
-				"$enabled"=1
+				enabled=1
 			fi
 			if [[ "$section" = "exp" && "$exp" = 1 ]] ; then
-				"$enabled"=1
+				enabled=1
 			fi
 			if [[ "$section" = "fsa" && "$fsa" = 1 ]] ; then
-				"$enabled"=1
+				enabled=1
 			fi
 			if [[ "$section" = "grm" && "$grm" = 1 ]] ; then
-				"$enabled"=1
+				enabled=1
 			fi
 			if [[ "$section" = "hfs" && "$hfs" = 1 ]] ; then
-				"$enabled"=1
+				enabled=1
 			fi
 			if [[ "$section" = "hjk" && "$hjk" = 1 ]] ; then
-				"$enabled"=1
+				enabled=1
 			fi
 			if [[ "$section" = "mnt" && "$mnt" = 1 ]] ; then
-				"$enabled"=1
+				enabled=1
 			fi
 			if [[ "$section" = "pha" && "$pha" = 1 ]] ; then
-				"$enabled"=1
+				enabled=1
 			fi
 			if [[ "$section" = "psh" && "$psh" = 1 ]] ; then
-				"$enabled"=1
+				enabled=1
 			fi
 			if [[ "$section" = "wrz" && "$wrz" = 1 ]] ; then
-				"$enabled"=1
+				enabled=1
 			fi
 			if [[ "$all" = 1 ]] ; then
-				"$enabled"=1
+				enabled=1
 			fi
 			if [[ "$enabled" = 1 ]] ; then
-			 f_download "$msg" "$url"
+				f_download "$msg" "$url"
 			fi
 			unset section
 			unset url
