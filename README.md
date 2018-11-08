@@ -1,7 +1,7 @@
 # AdKill - Kill Ads without browser extension
-- Version : 2.6
+- Version : 2.7
 - Author : Penthium2
-- Release date : 2018-10-08
+- Release date : 2018-11-09
 - Licence : GNU GPL V.3
 
 Inspired by original [hakerdefo] script.
