@@ -145,11 +145,6 @@ msg=Downloading from pgl.yoyo.org :
 url=http://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext
 enabled=1
 
-[sourceforge.net/project/adzhosts]
-msg=Downloading from downloads.sourceforge.net/project/adzhosts :
-url=http://downloads.sourceforge.net/project/adzhosts/FORADAWAY.txt
-enabled=1
-
 [ats]
 msg=Downloading from hosts-file.net : ad/tracking servers
 url=http://hosts-file.net/ad_servers.txt
