@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ## adkill
-## version 2.6
-## release 2018/10/08
+## version 2.7
+## release 2018/11/09
 ## by penthium for Viperr
 ## Fork by DD
 ## inspired by this script http://vsido.org/index.php?topic=757.0
